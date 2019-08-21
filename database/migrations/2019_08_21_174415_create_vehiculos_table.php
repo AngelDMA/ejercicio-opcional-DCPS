@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePersonaTable extends Migration
+class CreateVehiculosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class CreatePersonaTable extends Migration
      */
     public function up()
     {
-        Schema::create('persona', function (Blueprint $table) {
+        Schema::create('vehiculos', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string("placa");
+            $table->unsignedBigInteger("marca_id");
+            $table->foreign("marca_id")->references("id")->on("marcas");
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreatePersonaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('persona');
+        Schema::dropIfExists('vehiculos');
     }
 }
