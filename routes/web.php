@@ -16,3 +16,6 @@ Route::get('/', function () {
 });
 
 Route::get('/opciones', 'LoginController@index')->name('login');
+Route::get('/registrar', 'PersonaController@registrarIndex')->name('registrar_index');
+Route::get('/listar', 'PersonaController@listarIndex')->name('listar_index');
+Route::get('/estadistica', 'PersonaController@estadisticaIndex')->name('estadistica_index');
