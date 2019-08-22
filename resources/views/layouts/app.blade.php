@@ -67,6 +67,14 @@
         .m-b-md {
             margin-bottom: 30px;
         }
+
+        .green {
+            color: green;
+        }
+
+        .red {
+            color: red;
+        }
     </style>
 </head>
 

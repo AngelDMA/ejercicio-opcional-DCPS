@@ -18,7 +18,9 @@ class PersonaController extends Controller
 
     public function listarIndex()
     {
-        return view('vistas.listar');
+        $autos = Vehiculo::all();
+
+        return view('vistas.listar', ["autos" => $autos]);
     }
 
     public function estadisticaIndex()
